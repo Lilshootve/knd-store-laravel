@@ -1,0 +1,212 @@
+/* ===================================================================
+   Custom CSS para KND Store
+   =================================================================== */
+
+/* -------------------------------------------------------------------
+   Variables de color
+   ------------------------------------------------------------------- */
+:root {
+  --knd-neon-blue: #00bfff;
+  --knd-electric-purple: #8a2be2;
+  --knd-gunmetal-gray: #2c2c2c;
+  --knd-black: #000000;
+  --knd-white: #ffffff;
+}
+
+/* -------------------------------------------------------------------
+   Reset básico y tipografía
+   ------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--knd-black);
+  color: var(--knd-white);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .heading, .card-title {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--knd-white);
+  margin-bottom: 0.5em;
+}
+
+/* -------------------------------------------------------------------
+   Enlaces
+   ------------------------------------------------------------------- */
+a {
+  color: var(--knd-neon-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--knd-electric-purple);
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------
+   Botones "neón"
+   ------------------------------------------------------------------- */
+.btn-neon,
+.btn-outline-neon {
+  display: inline-block;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.6em 1.2em;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Botón principal transparente con borde púrpura */
+.btn-outline-neon {
+  background: transparent;
+  border: 2px solid var(--knd-electric-purple);
+  color: var(--knd-electric-purple);
+}
+
+/* Hover para outline */
+.btn-outline-neon:hover {
+  background: var(--knd-electric-purple);
+  color: var(--knd-white);
+  border-color: var(--knd-neon-blue);
+}
+
+/* Botón sólido púrpura */
+.btn-neon {
+  background: var(--knd-electric-purple);
+  border: 2px solid var(--knd-electric-purple);
+  color: var(--knd-white);
+}
+
+/* Hover para sólido */
+.btn-neon:hover {
+  background: var(--knd-neon-blue);
+  border-color: var(--knd-neon-blue);
+  color: var(--knd-white);
+}
+
+/* -------------------------------------------------------------------
+   Fondo "hero"
+   ------------------------------------------------------------------- */
+.bg-hero {
+  background: rgba(30, 30, 30, 0.8);
+}
+
+/* -------------------------------------------------------------------
+   Navbar / Header
+   ------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--knd-gunmetal-gray);
+  padding: 0.8rem 1rem;
+}
+
+.navbar .navbar-brand img {
+  display: block;
+  max-height: 48px;
+}
+
+/* -------------------------------------------------------------------
+   Cards y secciones
+   ------------------------------------------------------------------- */
+.card {
+  background-color: var(--knd-gunmetal-gray);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  color: var(--knd-white);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-price {
+  color: var(--knd-electric-purple);
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------------
+   Formularios
+   ------------------------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid var(--knd-electric-purple);
+  border-radius: 0.5rem;
+  background-color: var(--knd-gunmetal-gray);
+  color: var(--knd-white);
+  font-family: 'Inter', Arial, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--knd-neon-blue);
+}
+
+/* -------------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------------- */
+footer {
+  background-color: #111;
+  color: #666;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--knd-electric-purple);
+}
+
+footer a:hover {
+  color: var(--knd-neon-blue);
+}
+
+/* -------------------------------------------------------------------
+   Utilidades
+   ------------------------------------------------------------------- */
+.text-center { text-align: center !important; }
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.p-1  { padding: 0.25rem !important; }
+.p-2  { padding: 0.5rem !important; }
+.p-3  { padding: 1rem !important; }
+
+/* ===================================================================
+   Fin de custom.css
+   =================================================================== */
+
+/* Ajustes para el fondo de partículas en formularios */
+#particles-js {
+  background: transparent !important;
+}
+
+/* Google Fonts para Orbitron e Inter */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap');
