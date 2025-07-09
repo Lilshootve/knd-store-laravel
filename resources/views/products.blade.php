@@ -3,9 +3,10 @@
         .products-container {
             background: rgba(0,0,0,0.9);
             min-height: 100vh;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         /* Sistema de partículas */
@@ -22,6 +23,8 @@
         .products-content {
             position: relative;
             z-index: 2;
+            width: 100%;
+            max-width: none;
         }
 
         .filter-section {
@@ -74,7 +77,7 @@
             gap: 2rem;
             padding: 2rem 0;
             justify-content: center;
-            max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -195,7 +198,7 @@
 
     <div class="products-container">
         <div class="products-content">
-            <div class="container">
+            <div class="container-fluid">
                 <!-- Filtros -->
                 <div class="filter-section">
                     <h3 class="filter-title">Filtrar por Plataforma</h3>

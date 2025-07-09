@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoadingController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoadingController::class, 'index'])->name('loading');
@@ -11,9 +12,7 @@ Route::get('/store', function () {
     return view('store');
 })->name('store');
 
-Route::get('/products', function () {
-    return view('products');
-})->name('products');
+Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 // Rutas del carrito
 Route::prefix('cart')->group(function () {

@@ -1,11 +1,15 @@
-<header class="knd-header" x-data="{ mobileMenuOpen: false, cartCount: 0 }" x-init="
+<header class="knd-header" x-data="{ mobileMenuOpen: false, cartCount: 0, cartLoaded: false }" x-init="
     // Cargar contador del carrito al inicializar
     fetch('/cart/info')
         .then(response => response.json())
         .then(data => {
             cartCount = data.cart_count;
+            cartLoaded = true;
         })
-        .catch(error => console.error('Error loading cart info:', error));
+        .catch(error => {
+            console.error('Error loading cart info:', error);
+            cartLoaded = true;
+        });
 ">
     <div id="header-particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></div>
     <style>
@@ -295,7 +299,7 @@
             <!-- Cart Button -->
             <a href="{{ route('cart') }}" class="cart-button">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count" x-show="cartCount > 0" x-text="cartCount">0</span>
+                <span class="cart-count" x-show="cartLoaded && cartCount > 0" x-text="cartCount">0</span>
             </a>
         </div>
 
@@ -330,7 +334,7 @@
 
             <a href="{{ route('cart') }}" class="cart-button">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count" x-show="cartCount > 0" x-text="cartCount">0</span>
+                <span class="cart-count" x-show="cartLoaded && cartCount > 0" x-text="cartCount">0</span>
                 Carrito
             </a>
         </div>
@@ -342,6 +346,7 @@
             const header = document.querySelector('.knd-header');
             if (header && header.__x) {
                 header.__x.$data.cartCount = count;
+                header.__x.$data.cartLoaded = true;
             }
         };
 
